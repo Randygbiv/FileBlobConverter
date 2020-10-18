@@ -1,0 +1,78 @@
+{
+    "exclude": ["coverage", "jest.config.js"],
+    "rules": {
+        "adjacent-overload-signatures": true,
+        "array-type": [true, "array"],
+        "arrow-parens": true,
+        "arrow-return-shorthand": true,
+        "await-promise": [true, "Thenable"],
+        "ban-comma-operator": true,
+        "binary-expression-operand-order": true,
+        "quotemark": [true, "double"],
+        "ban-ts-ignore": false,
+        "member-access": true,
+        "member-ordering": [
+            true,
+            {
+                "alphabetize": true,
+                "order": [
+                    "public-static-field",
+                    "public-instance-field",
+                    "protected-instance-field",
+                    "private-instance-field",
+                    "public-constructor",
+                    "protected-constructor",
+                    "private-constructor",
+                    "public-static-method",
+                    "public-instance-method",
+                    "protected-instance-method",
+                    "private-instance-method"
+                ]
+            }
+        ],
+        "no-var-keyword": true,
+        "promise-function-async": true,
+        "typedef": [
+            true,
+            "parameter",
+            "property-declaration",
+            "variable-declaration"
+        ],
+        "curly": true,
+        "function-constructor": true,
+        "no-duplicate-imports": true,
+        "no-duplicate-super": true,
+        "no-duplicate-variable": true,
+        "static-this": true,
+        "switch-default": true,
+        "triple-equals": true,
+        "use-isnan": true,
+        "max-classes-per-file": [true, 1],
+        "max-file-line-count": [true, 250],
+        "prefer-const": true,
+        "class-name": true,
+        "interface-over-type-literal": true,
+        "one-variable-per-declaration": true,
+        "ordered-imports": true,
+        "prefer-method-signature": true,
+        "return-undefined": true,
+        "eofline": true,
+        "import-spacing": true,
+        "max-line-length": [
+            true,
+            {
+              "limit": 120,
+              "ignore-pattern": "^import |^export {(.*?)}",
+              "check-strings": true,
+              "check-regex": true
+            }
+        ],
+        "newline-before-return": true,
+        "new-parens": true,
+        "no-consecutive-blank-lines": true,
+        "no-irregular-whitespace": true,
+        "no-trailing-whitespace": true,
+        "semicolon": true,
+        "no-this-alias": false
+    }
+}
