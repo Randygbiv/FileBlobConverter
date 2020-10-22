@@ -113,7 +113,8 @@ public File(e: event)
 {
     const c: IFileConverter = new Converter();
     const b: IBlobFile = c.ConvertFileToBlobFile(
-        e.target.file[0]
+        e.target.file[0],
+        new FileReader()
     );
     axios.post("/crud/api/path", b)
         .then((data: any) => data)
