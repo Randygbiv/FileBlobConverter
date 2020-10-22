@@ -8,7 +8,7 @@ import IBlobFile from "./IBlobFile";
 export default class BlobFile implements IBlobFile
 {
     /** @inheritdoc */
-    public Blob: string;
+    public BinaryString: string;
     /** @inheritdoc */
     public FileType: string;
     /** @inheritdoc */
@@ -24,7 +24,7 @@ export default class BlobFile implements IBlobFile
      */
     public constructor(type?: string, name?: string, size?: number)
     {
-        this.Blob = "";
+        this.BinaryString = "";
         this.FileType = type !== undefined ? type : "";
         this.Name = name !== undefined ? name : "";
         this.Size = size !== undefined ? size : 0;

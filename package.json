@@ -3,9 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "build/index.js",
-  "dependencies": {
-    "tslog": "^2.9.1"
-  },
+  "dependencies": {},
   "devDependencies": {
     "@types/jest": "^26.0.14",
     "jest": "^26.5.3",
@@ -21,6 +19,7 @@
   "license": "ISC",
   "types": "dist/index.d.ts",
   "files": [
-    "build/**/*.js"
+    "build/**/*.js",
+    "build/**/*.ts"
   ]
 }

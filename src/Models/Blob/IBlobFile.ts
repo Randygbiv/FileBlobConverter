@@ -4,7 +4,7 @@ export default interface IBlobFile
      * String version of the blob, to be stored and converted back.
      * @type {string}
      */
-    Blob: string;
+    BinaryString: string;
 
     /**
      * Name of the file type, to be stored and help in converting the file back.

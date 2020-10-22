@@ -25,7 +25,7 @@ describe("BlobFile.ts", () => {
         // Arrange
         const blobFile: IBlobFile = new BlobFile();
         // Act
-        blobFile.Blob = "ajf;sdkjfh0401ghsdfjklajdf1084t0148hfa;sdkjf141840184";
+        blobFile.BinaryString = "ajf;sdkjfh0401ghsdfjklajdf1084t0148hfa;sdkjf141840184";
         blobFile.FileType = "application/excel";
         blobFile.Name = "strangework.xlsx";
         blobFile.Size = 434344;
