@@ -1,6 +1,6 @@
 {
   "name": "file-blob-converter",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Module to convert files to blob objects to be stored in DB and back again.",
   "repository": {
     "type": "git",
