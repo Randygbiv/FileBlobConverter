@@ -2,12 +2,16 @@
 
 *Project offers a clean and concise way to convert files to blobs for databases storage. The project will grant the ability to convert excel, word documents, images, etc into blob files for storage. It will also offer a method for the user convert those blobs back. The blob can be converted back, but if not converted back into it's file type, could cause potential issues.*
 
-*The inspiration of this project is at work we ran into an issue doing this on our client apps. The client needed to grab a excel version of their historical actions in data. This was frustrating to me, because I couldn't find a single project on NPM that could do it.*
-
 
 ## Usage
 
 *The module can be used in multiple ways. The primary function is to convert files to and from binaryBlob ojects for storage. There are several models and interfaces, but only two public methods on a single service class.*
+
+### Installation
+***
+```bash
+npm i file-blob-converter --save
+```
 
 ### Models
 ***
@@ -73,7 +77,7 @@ export default interface IBlobFile
 export default interface IFileConverter
 {
     ConvertBlobToFile(blob: IBlobFile): IFile;
-    ConvertFileToBlobFile(file: IFile,fileReader:  IFileReader): Promise<IBlobFile>;
+    ConvertFileToBlobFile(file: IFile): Promise<IBlobFile>;
 }
 ```
 
@@ -86,7 +90,7 @@ First, implement a concrete version of the abstract class.
 ```javascript
 import FileConverter from "fileblobconverter"
 
-export default class Converter extends FileConverter implements IFileConverter
+export default class Converter extends FileConverter
 {
     private readonly _util: IUtil; //user implemented
 
@@ -112,10 +116,7 @@ import Converter from "../users/concrete/class/path";
 public File(e: event)
 {
     const c: IFileConverter = new Converter();
-    const b: IBlobFile = c.ConvertFileToBlobFile(
-        e.target.file[0],
-        new FileReader()
-    );
+    const b: IBlobFile = c.ConvertFileToBlobFile(e.target.file[0]);
     axios.post("/crud/api/path", b)
         .then((data: any) => data)
         .catch((err) => logger.error(`Message: ${err}`));
@@ -140,6 +141,10 @@ public DownloadFile(id: number)
     window.open(urlObj);
 }
 ```
+
+## Change Log
+***
+* 10-23-2020 | Abstracted FileReader away from the user, still passible on constructor.
 
 ## Contribution Guide
 ***

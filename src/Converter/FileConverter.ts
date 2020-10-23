@@ -9,6 +9,13 @@ import IFileConverter from "./IFileConverter";
  */
 export default abstract class FileConverter implements IFileConverter
 {
+    private _fileReader: FileReader;
+
+    public constructor(fileReader?: FileReader)
+    {
+        this._fileReader = fileReader !== undefined ? fileReader : new FileReader();
+    }
+
     /** @inheritdoc */
     public ConvertBlobToFile(blob: IBlobFile): IFile
     {
@@ -23,21 +30,21 @@ export default abstract class FileConverter implements IFileConverter
     }
 
     /** @inheritdoc */
-    public async ConvertFileToBlobFile(file: IFile, fileReader: IFileReader): Promise<IBlobFile>
+    public async ConvertFileToBlobFile(file: IFile): Promise<IBlobFile>
     {
         return new Promise((resolve, reject) => {
-            fileReader.onerror = () => {
-                fileReader.abort();
+            this._fileReader.onerror = () => {
+                this._fileReader.abort();
                 reject();
             };
 
-            fileReader.onload = async () => {
+            this._fileReader.onload = async () => {
                 const b:IBlobFile = new BlobFile(file.type, file.name, file.size);
-                b.BinaryString = fileReader.result;
+                b.BinaryString = this._fileReader.result as string;
                 resolve(b);
             };
 
-            fileReader.readAsBinaryString(file);
+            this._fileReader.readAsBinaryString(file as unknown as Blob);
         });
     }
 

@@ -5,7 +5,7 @@ import IFile from "../../src/Models/File/IFile";
 import Converter from "../TestClasses/TestFileConverter";
 
 describe("FileConverter.ts", () => {
-    const c: IFileConverter = new Converter();
+    const c: IFileConverter = new Converter(new FileReader());
 
     test("It succeeds to convert binary string to file", async(done) => {
         // Arrange

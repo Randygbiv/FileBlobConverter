@@ -8,7 +8,7 @@ import MockFileReader from "../TestClasses/MockFileReader";
 import Converter from "../TestClasses/TestFileConverter";
 
 describe("FileConverter.ts", () => {
-    const c: IFileConverter = new Converter();
+    const c: IFileConverter = new Converter(new FileReader());
 
     test("It converts file to blob object", () => {
         // Arrange
@@ -18,7 +18,7 @@ describe("FileConverter.ts", () => {
         const bond: any = jest.spyOn(r, "onload");
         // Assert
 
-        expect(c.ConvertFileToBlobFile(f, r))
+        expect(c.ConvertFileToBlobFile(f))
             .resolves.toBeInstanceOf(new BlobFile());
         expect(r.onload).not.toEqual(jest.fn());
     });

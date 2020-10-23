@@ -3,8 +3,8 @@ import IFileConverter from "../../src/Converter/IFileConverter";
 
 export default class Converter extends FileConverter implements IFileConverter
 {
-    public constructor()
+    public constructor(fileReader: FileReader)
     {
-        super();
+        super(fileReader);
     }
 }
