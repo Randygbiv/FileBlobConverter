@@ -22,5 +22,5 @@ export default interface IFileConverter
      * @param {IFileReader} fileReader
      * @returns {Promise<IBlobFile>}
      */
-    ConvertFileToBlobFile(file: IFile, fileReader: IFileReader): Promise<IBlobFile>;
+    ConvertFileToBlobFile(file: IFile): Promise<IBlobFile>;
 }
