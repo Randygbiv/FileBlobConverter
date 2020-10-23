@@ -1,8 +1,12 @@
 {
-  "name": "fileblobconverter",
+  "name": "file-blob-converter",
   "version": "1.0.0",
-  "description": "",
-  "main": "build/index.js",
+  "description": "Module to convert files to blob objects to be stored in DB and back again.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/randall-s-lee/FileBlobConverter"
+  },
+  "main": "dist/index.js",
   "dependencies": {},
   "devDependencies": {
     "@types/jest": "^26.0.14",
@@ -15,11 +19,11 @@
     "test": "jest"
   },
   "keywords": [],
-  "author": "",
+  "author": "Randall Lee <l.randall.scott@gmail.com> (https://www.designsbyrandall.com)",
   "license": "ISC",
   "types": "dist/index.d.ts",
   "files": [
-    "build/**/*.js",
-    "build/**/*.ts"
+    "dist/**/*.js",
+    "dist/**/*.ts"
   ]
 }
